@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-background: #1A1A2E;
+  --color-dark-card: #16213E;
+  --color-dark-accent: #2EC4B6;
+  --color-dark-text: #FFFFFF;
+  --color-dark-subtext: #A0A0B0;
+  --color-dark-input: #FFFFFF;
+  --color-dark-inputBackground: #0F3460;
+  --color-dark-border: #2EC4B6;
+  --color-dark-error: #FF6B6B;
+  --color-dark-success: #4CAF50;
+  --color-dark-warning: #FFC107;
+  --font-sans: "Inter", "system-ui", "sans-serif";
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark-background);
+    color: var(--color-dark-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-dark-accent);
+    color: var(--color-dark-background);
+  }
+}
