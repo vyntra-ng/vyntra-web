@@ -1,86 +1,30 @@
-/* Rip out the default soft UI variables and replace with aggressive esports theme */
-:root {
-  --text: #D1D5DB; /* Crisp light gray for legibility */
-  --text-h: #FFFFFF; /* Pure white for high contrast headings */
-  --bg: #0A0A0A; /* Deep, almost pure black */
-  --border: rgba(255, 255, 255, 0.08); /* Extremely subtle mathematical borders */
-  --code-bg: #1A1A1A;
-  --accent: #10B981; /* Keep your sharp mint/emerald green */
-  --accent-bg: rgba(16, 185, 129, 0.1);
-  --accent-border: rgba(16, 185, 129, 0.3);
-  --social-bg: rgba(25, 25, 25, 0.5);
-  
-  /* Kill the soft shadows. Use sharp, technical drops */
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  
-  /* Premium typography overhaul */
-  --sans: 'Outfit', system-ui, sans-serif;
-  --heading: 'Rajdhani', 'Outfit', sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+@import "tailwindcss";
 
-  font: 16px/1.6 var(--sans);
-  color-scheme: dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --color-dark-background: #1A1A2E;
+  --color-dark-card: #16213E;
+  --color-dark-accent: #2EC4B6;
+  --color-dark-text: #FFFFFF;
+  --color-dark-subtext: #A0A0B0;
+  --color-dark-input: #FFFFFF;
+  --color-dark-inputBackground: #0F3460;
+  --color-dark-border: #2EC4B6;
+  --color-dark-error: #FF6B6B;
+  --color-dark-success: #4CAF50;
+  --color-dark-warning: #FFC107;
+  --font-sans: "Inter", "system-ui", "sans-serif";
 }
 
-#root {
-  width: 100%;
-  max-width: 1200px; /* Wider canvas for a dashboard feel */
-  margin: 0 auto;
-  text-align: left; /* Stop centering everything, left-align is more premium */
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background-color: var(--bg);
-}
-
-h1, h2, h3 {
-  font-family: var(--heading);
-  font-weight: 700;
-  color: var(--text-h);
-  text-transform: uppercase; /* Esports titles look great uppercase */
-  letter-spacing: 0.05em; /* Track out headings slightly */
-}
-
-h1 {
-  font-size: 64px;
-  line-height: 1.1;
-  margin: 40px 0 16px;
-}
-
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 42px;
+@layer base {
+  body {
+    background-color: var(--color-dark-background);
+    color: var(--color-dark-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-h2 {
-  font-size: 28px;
-  line-height: 1.2;
-  margin: 0 0 16px;
-}
-
-p {
-  margin: 0;
-  font-weight: 400;
-}
-
-/* Kill soft pill buttons - make them sharp */
-button, .button {
-  font-family: var(--heading);
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  border-radius: 4px; /* Sharp corners! */
-  transition: all 0.2s ease; /* Fast, snappy transitions */
+  ::selection {
+    background-color: var(--color-dark-accent);
+    color: var(--color-dark-background);
+  }
 }
